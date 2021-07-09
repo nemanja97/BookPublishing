@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8001e9a5-1e0f-41c4-8883-6c40ac8ac0f6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../SEP-K1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/src/main/java/lu/ftn/discoveryservice/DiscoveryServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../discovery-service/src/test/java/lu/ftn/discoveryservice/DiscoveryServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/src/main/java/lu/ftn/gatewayservice/GatewayServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/src/main/java/lu/ftn/gatewayservice/config/GatewayConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../gateway-service/src/test/java/lu/ftn/gatewayservice/GatewayServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/src/main/java/lu/ftn/kppaymentservice/KpPaymentServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/src/main/java/lu/ftn/kppaymentservice/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-payment-service/src/test/java/lu/ftn/kppaymentservice/KpPaymentServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/src/main/java/lu/ftn/kpservice/KpServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/src/main/java/lu/ftn/kpservice/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../kp-service/src/test/java/lu/ftn/kpservice/KpServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/.mvn/wrapper/MavenWrapperDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/src/main/java/lu/ftn/luaccountingservice/LuAccountingServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/src/main/java/lu/ftn/luaccountingservice/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lu-accounting-service/src/test/java/lu/ftn/luaccountingservice/LuAccountingServiceApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Users\neman\AppData\Local\JetBrains\Toolbox\apps\IDEA-U\ch-0\202.7660.26\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1lQixuT253ONkqygtPwtkLsKS5i" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8001e9a5-1e0f-41c4-8883-6c40ac8ac0f6" name="Default Changelist" comment="" />
+      <created>1607535966071</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1607535966071</updated>
+      <workItem from="1607535967107" duration="10000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

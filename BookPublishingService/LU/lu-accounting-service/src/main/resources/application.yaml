@@ -1,0 +1,26 @@
+server:
+  port: 8079
+  ssl:
+    key-store-type: PKCS12
+    key-store: LU/lu-accounting-service/src/main/resources/luBackend.p12
+    key-store-password: lu2020
+    key-alias: lubackend
+    enabled: true
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/lu_accounting_service?useSSL=false&createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update #modify StartupDataAdder as necessary
+  application:
+    name: lu-accounting-service
+
+api:
+  frontend: https://localhost:3000
+  kp: https://localhost:8080/kp-service/api
+
+kp:
+  token: 40288185777da90101777dabec450000

@@ -1,0 +1,5 @@
+<div *ngFor="let plan of plans.listOfPlans">
+  {{plan.name}}<br/>
+  {{plan.amount}}
+  <button (click)="goPlan(plan.id)">Buy</button>
+</div>

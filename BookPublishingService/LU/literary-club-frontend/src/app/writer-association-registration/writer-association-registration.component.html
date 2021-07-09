@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div *ngIf="submission" [ngSwitch]="submission.decision">
+        <div *ngSwitchCase="'UNDECIDED'">
+          <h1>Your submission is still being decided on.</h1>
+        </div>
+        <div *ngSwitchCase="'REQUEST_MORE_WORKS'">
+          <h1>We require more of your works.</h1>
+        </div>
+        <div *ngSwitchCase="'ACCEPT'">
+          <h1>Your submission is accepted.</h1>
+        </div>
+        <div *ngSwitchCase="'DENY'">
+          <h1>
+            Your submission is denied. You can reapply again after you've
+            written some work.
+          </h1>
+        </div>
+        <div *ngSwitchDefault>output2</div>
+      </div>
+      <app-camunda-dynamic-form
+        *ngIf="!submission || submission.decision === 'REQUEST_MORE_WORKS'"
+        [formFields]="formFields"
+        [loadingData]="loadingData"
+        (submitEvent)="submitWork($event)"
+      ></app-camunda-dynamic-form>
+    </div>
+  </div>
+</div>

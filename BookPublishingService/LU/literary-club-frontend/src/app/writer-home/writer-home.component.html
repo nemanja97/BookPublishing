@@ -1,0 +1,7 @@
+<h1>Literarno udruzenje</h1>
+<div *ngIf="role=='writer'">
+  <button mat-raised-button>Add new book</button>
+</div>
+
+<app-books-table [books]="books"></app-books-table>
+

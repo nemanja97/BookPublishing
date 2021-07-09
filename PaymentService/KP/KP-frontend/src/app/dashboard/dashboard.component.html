@@ -1,0 +1,76 @@
+<app-header></app-header>
+<h2 *ngIf="!storeId">Please create store</h2>
+<div *ngIf="storeId">
+  <h2 class="center">Store id: {{storeId}}</h2>
+  <div *ngIf="storeOptions.length>0" class="center">
+    <h4>Your added payment options are: </h4>
+    <button *ngIf='hasOption("PAYPAL")'
+            mdbBtn
+            type="button"
+            color="indigo"
+            class="waves-light"
+            mdbWavesEffect
+            size="sm"
+    >
+      <i class="fab fa-paypal"></i>
+    </button>
+    <button *ngIf='hasOption("CARD")'
+            mdbBtn
+            type="button"
+            color="unique"
+            class="waves-light"
+            mdbWavesEffect
+            size="sm"
+    >
+      <i class="fas fa-credit-card"></i>
+    </button>
+    <button *ngIf='hasOption("BITCOIN")'
+            mdbBtn
+            type="button"
+            color="amber"
+            class="waves-light"
+            size="sm"
+            mdbWavesEffect
+    >
+      <i class="fab fa-btc"></i>
+    </button>
+  </div>
+  <h2 class="center">Add payment info</h2>
+  <div class="center">
+    <button *ngIf='!hasOption("PAYPAL")'
+            mdbBtn
+            type="button"
+            color="indigo"
+            class="waves-light"
+            mdbWavesEffect
+            size="lg"
+            (click)="openPaypalDialog()"
+    >
+      <i class="fab fa-paypal"></i>
+    </button>
+    <button *ngIf='!hasOption("CARD")'
+            mdbBtn
+            type="button"
+            color="unique"
+            class="waves-light"
+            mdbWavesEffect
+            size="lg"
+            (click)="openBankDialog()"
+    >
+      <i class="fas fa-credit-card"></i>
+    </button>
+    <button *ngIf='!hasOption("BITCOIN")'
+            mdbBtn
+            type="button"
+            color="amber"
+            class="waves-light"
+            size="lg"
+            mdbWavesEffect
+            (click)="openBitcoinDilog()"
+    >
+      <i class="fab fa-btc"></i>
+    </button>
+  </div>
+</div>
+
+

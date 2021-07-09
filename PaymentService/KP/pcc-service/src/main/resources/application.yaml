@@ -1,0 +1,16 @@
+server:
+  port: 8083
+  ssl:
+    key-store-type: PKCS12
+    key-store: KP/pcc-service/src/main/resources/pcc.p12
+    key-store-password: kp2020
+    key-alias: pcc
+    enabled: true
+
+spring:
+  application:
+    name: pcc-service
+
+api:
+  bank1: https://localhost:8081/api
+  bank2: https://localhost:8082/api

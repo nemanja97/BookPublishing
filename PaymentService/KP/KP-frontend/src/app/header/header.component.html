@@ -1,0 +1,23 @@
+<div *ngIf="!loggedIn()">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a mat-button [routerLink]="'/'">Home</a>
+      <span class="fill-remaining-space"></span>
+      <a mat-button [routerLink]="'/login'">Login</a>
+      <a mat-button [routerLink]="'/register'">Register</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+<div *ngIf="loggedIn()">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a mat-button [routerLink]="'/'">Home</a>
+      <a mat-button [routerLink]="'/createStore'">Create store</a>
+      <a mat-button [routerLink]="'/dashboard'">Dashboard</a>
+      <a *ngIf="hasOption('PAYPAL')" mat-button [routerLink]="'/createPlan'">Create paypal subscription plan</a>
+      <a mat-button [routerLink]="'/plans'">Plans</a>
+      <span class="fill-remaining-space"></span>
+      <a mat-button [routerLink]="'/'" (click)="logout()">Log out</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>

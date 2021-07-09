@@ -1,0 +1,98 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col">
+      <div
+        *ngIf="loadingData"
+        style="margin-top: 5vh"
+        class="d-flex justify-content-center"
+      >
+        <div
+          class="spinner-border text-primary"
+          role="status"
+          style="width: 25rem; height: 25rem"
+        ></div>
+      </div>
+      <div
+        [class.show]="error"
+        #alert
+        class="alert alert-danger alert-dismissible fade show"
+        role="alert"
+        style="margin-top: 10vh"
+      >
+        <button
+          type="button"
+          class="close"
+          aria-label="Close"
+          (click)="closeAlert()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{ error }}
+      </div>
+      <mdb-card *ngIf="!loadingData" style="margin-top: 5vh">
+        <mdb-card-body>
+          <mdb-card-title>
+            <h5 class="font-weight-bold mb-3">Invoice: {{ invoice.id }}</h5>
+          </mdb-card-title>
+          <ul
+            class="list-group list-group-flush"
+            *ngFor="let item of invoice.items"
+            class="row"
+          >
+            <li>{{ item.name }} - {{ item.amount }} {{ item.currency }}</li>
+          </ul>
+        </mdb-card-body>
+        <mdb-card-body>
+          <hr />
+          <p>Full price: {{ invoice.amount }} {{ invoice.currency }}</p>
+        </mdb-card-body>
+        <mdb-card-footer class="mdb-color lighten-5 text-center">
+          <div
+            class="row d-flex justify-content-center"
+            style="margin-top: 5vh"
+          >
+            <div class="col justify-content-center">
+              <button
+                mdbBtn
+                type="button"
+                color="unique"
+                class="waves-light"
+                mdbWavesEffect
+                size="lg"
+                (click)="onBankClick()"
+              >
+                <i class="fas fa-credit-card"></i>
+              </button>
+            </div>
+            <div class="col justify-content-center">
+              <button
+                mdbBtn
+                type="button"
+                color="indigo"
+                class="waves-light"
+                mdbWavesEffect
+                size="lg"
+                (click)="onPayPalClick()"
+              >
+                <i class="fab fa-paypal"></i>
+              </button>
+            </div>
+            <div class="col d-md-block">
+              <button
+                mdbBtn
+                type="button"
+                color="amber"
+                class="waves-light"
+                size="lg"
+                mdbWavesEffect
+                (click)="onBitcoinClick()"
+              >
+                <i class="fab fa-btc"></i>
+              </button>
+            </div>
+          </div>
+        </mdb-card-footer>
+      </mdb-card>
+    </div>
+  </div>
+</div>

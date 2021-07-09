@@ -1,0 +1,8 @@
+<h2 mat-dialog-title>Enter Paypal info</h2>
+<input matInput [(ngModel)]="data.bankInfo.bankName" type="text" placeholder="Bank Name">
+<input matInput [(ngModel)]="data.bankInfo.merchantId" type="text" placeholder="Merchant id">
+<input matInput [(ngModel)]="data.bankInfo.merchantPassword" type="password" placeholder="Merchant password">
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.bankInfo">Add</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

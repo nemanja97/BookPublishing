@@ -1,0 +1,69 @@
+<div class="container" *ngIf="!loadingData; else spinner">
+  <form
+    class="text-center border border-light p-5"
+    ngNativeValidate
+    (ngSubmit)="onSubmit()"
+    [formGroup]="form"
+  >
+    <div
+      *ngFor="let field of formFields"
+      class="row"
+      [ngSwitch]="field.properties.type"
+    >
+      <div class="col">
+        <app-camunda-text-input-field
+          *ngSwitchCase="
+            ['text', 'email', 'password'].includes(field.properties.type)
+              ? field.properties.type
+              : !field.properties.type
+          "
+          [form]="form"
+          [field]="field"
+        ></app-camunda-text-input-field>
+        <app-camunda-multi-select-input-field
+          *ngSwitchCase="'select-multiple'"
+          [form]="form"
+          [field]="field"
+        >
+        </app-camunda-multi-select-input-field>
+        <app-camunda-select-input
+        *ngSwitchCase="'select'"
+        [form]="form"
+        [field]="field"
+      >
+      </app-camunda-select-input>
+        <app-camunda-boolean-input-field
+          *ngSwitchCase="'boolean'"
+          [form]="form"
+          [field]="field"
+        >
+        </app-camunda-boolean-input-field>
+        <app-camunda-file-upload
+        *ngSwitchCase="'file'"
+        [form]="form"
+        [field]="field"
+        >
+        </app-camunda-file-upload>
+        <h2 *ngSwitchDefault>Not implemented</h2>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <button mdbBtn type="submit" [disabled]="!form.valid">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<ng-template #spinner>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <mat-spinner></mat-spinner>
+      </div>
+    </div>
+  </div>
+</ng-template>

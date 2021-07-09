@@ -1,0 +1,75 @@
+<div *appShowAuthed="'EDITOR'">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a mat-button [routerLink]="'/home'">Home</a>
+      <a mat-button [routerLink]="'editor/tasks'">Complete your tasks</a>
+      <a mat-button [routerLink]="'/plagiarism'">Report plagiarized work</a>
+      <a mat-button [routerLink]="'/editor/books'">Book reviews</a>
+      <span class="fill-remaining-space"></span>
+      <a mat-button [routerLink]="'/home'" (click)="logout()">Log out</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<div *appShowAuthed="'HEAD_EDITOR'">
+  <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <a mat-button [routerLink]="'/home'">Home</a>
+        <a mat-button [routerLink]="'editor/tasks'">Complete your tasks</a>
+        <a mat-button [routerLink]="'/plagiarism'">Report plagiarized work</a>
+        <span class="fill-remaining-space"></span>
+        <a mat-button [routerLink]="'/home'" (click)="logout()">Log out</a>
+      </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<div *appShowAuthed="'WRITER'">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a mat-button [routerLink]="'/home'">Home</a>
+      <a mat-button [routerLink]="'/membership'">Apply for association membership</a>
+      <a mat-button [routerLink]="'/writer_books'">Books</a>
+      <a mat-button [routerLink]="'/submit_book_preview'">Publish new book</a>
+      <a mat-button [routerLink]="'/plagiarism'">Report plagiarized work</a>
+      <span class="fill-remaining-space"></span>
+      <a mat-button [routerLink]="'/home'" (click)="logout()">Log out</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+
+<div *appShowAuthed="'READER'">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a mat-button [routerLink]="'/home'">Home</a>
+      <a mat-button [routerLink]="'/reader_books'">Books</a>
+      <span class="fill-remaining-space"></span>
+      <a mat-button [routerLink]="'/home'" (click)="logout()">Log out</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<div *appShowAuthed="'LECTOR'">
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <a mat-button [routerLink]="'/home'">Home</a>
+      <a mat-button [routerLink]="'/lector_books'">Books</a>
+      <a mat-button [routerLink]="'/plagiarism'">Report plagiarized work</a>
+      <span class="fill-remaining-space"></span>
+      <a mat-button [routerLink]="'/home'" (click)="logout()">Log out</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
+
+<div *appShowAuthed="'UNREGISTERED'">
+  <mat-toolbar color="primary">
+      <mat-toolbar-row>
+          <a mat-button [routerLink]="'/home'">Home</a>
+          <a mat-button [routerLink]="'/plagiarism'">Report plagiarized work</a>
+          <span class="fill-remaining-space"></span>
+          <a mat-button [routerLink]="'/login'">Login</a>
+          <a mat-button [routerLink]="'/signUp/reader'">Sign up as a reader</a>
+          <a mat-button [routerLink]="'/signUp/writer'">Sign up as a writer</a>
+      </mat-toolbar-row>
+  </mat-toolbar>
+</div>

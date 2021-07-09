@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <mat-card *ngFor="let task of tasks">
+        <mat-card-header>
+          <mat-card-title>{{task.name}}</mat-card-title>
+          <mat-card-subtitle>{{task.createdAt}}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-actions>
+          <button mat-button (click)="goToTask(task)">Go to</button>
+          <button *ngIf="task.name != 'Choose editors for evaluation'" mat-button (click)="download(task)">Download files</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

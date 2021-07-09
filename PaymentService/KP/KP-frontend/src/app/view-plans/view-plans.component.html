@@ -1,0 +1,18 @@
+<app-header></app-header>
+<h2 class="center" *ngIf="!plans">You don't have any plans</h2>
+<div *ngIf="plans">
+  <h2 class="center"  *ngIf="plans.listOfPlans.length === 0">You don't have any plans</h2>
+  <div *ngFor="let plan of plans.listOfPlans" class="customCard">
+    <mat-card>
+      <mat-card-title>{{plan.name}}</mat-card-title>
+      <mat-card-subtitle>{{plan.id}}</mat-card-subtitle>
+      <mat-card-content>
+        <p>{{plan.description}}</p>
+        <p>{{plan.amount}}</p>
+        <p>Frequency: {{plan.frequency}}</p>
+      </mat-card-content>
+    </mat-card>
+    <br/>
+  </div>
+</div>
+

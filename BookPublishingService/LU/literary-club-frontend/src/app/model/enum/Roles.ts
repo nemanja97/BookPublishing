@@ -1,0 +1,8 @@
+export enum Role {
+  HEAD_EDITOR,
+  EDITOR,
+  WRITER,
+  READER,
+  UNREGISTERED,
+  LECTOR
+}

@@ -1,0 +1,30 @@
+<div [formGroup]="form">
+  <mat-form-field appearance="fill">
+    <mat-label>{{ field.label }}</mat-label>
+
+    <input
+      matInput
+      [formControlName]="field.id"
+      [id]="field.id"
+      [type]="field.properties.type"
+    />
+
+    <div class="errorMessage" *ngIf="!isValid.isValid">
+      <mat-error
+        *ngIf="isValid.error !== null && isValid.error.required === true"
+      >
+        Field is required.
+      </mat-error>
+
+      <mat-error *ngIf="isValid.error !== null && isValid.error.email === true">
+        Field is not a valid email format.
+      </mat-error>
+
+      <mat-error
+        *ngIf="isValid.error !== null && isValid.error.pattern != null"
+      >
+        Field is not in valid format.
+      </mat-error>
+    </div>
+  </mat-form-field>
+</div>

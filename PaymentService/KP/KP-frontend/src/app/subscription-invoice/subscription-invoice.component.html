@@ -1,0 +1,9 @@
+<mat-card class="smallerWidth">
+  <mat-card-title>{{plan.name}}</mat-card-title>
+  <mat-card-subtitle>Frequency: {{plan.frequency}}</mat-card-subtitle>
+  <mat-card-content>
+    <p>Starting amount: {{plan.amountStart}} {{plan.currency}}</p>
+    <p>Regular amount: {{plan.amount}} {{plan.currency}}</p>
+  </mat-card-content>
+  <button mat-raised-button (click)="selectPlan()">Select plan</button>
+</mat-card>

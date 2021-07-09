@@ -1,0 +1,52 @@
+server:
+  port: 0
+  ssl:
+    key-store-type: PKCS12
+    key-store: KP/paypal-payment-service/src/main/resources/kpPaypal.p12
+    key-store-password: kp2020
+    key-alias: kppaypal
+    enabled: true
+
+database:
+  encryption:
+    key: EYoyAV28pOWRSvsirf1Aqxp0bx0cyIBB
+
+spring:
+  application:
+    name: paypal-payment-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/paypalservice?useSSL=false&createDatabaseIfNotExist=true&serverTimezone=Europe/Belgrade
+    username: root
+    password: admin
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: LogsPaypal
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+eureka:
+  client:
+    service-url:
+      defaultZone: https://localhost:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${random.int}
+    lease-expiration-duration-in-seconds: 2
+    lease-renewal-interval-in-seconds: 1
+    nonSecurePortEnabled: false
+    securePortEnabled: true
+    securePort: ${server.port}
+
+paypal:
+  mode: sandbox
+  client:
+    id: ARqzYDPzymILOOCliStk3k_yRb7QksG3hmu6eRFflErR9KqnqnNly6uYFEQYlLJpKx6_ar7tW7MZ_-I8
+    secret: EHuLns0m9dsKPkX_DE8gOfycoCl3fGlHCgDmHUrxpvslxkBGDuw5BzOxCb9TMpOsqWAJ2ijfoKq8-XdH

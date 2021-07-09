@@ -1,0 +1,70 @@
+server:
+  port: 8080
+  ssl:
+    key-store-type: PKCS12
+    key-store: KP/gateway-service/src/main/resources/kpGateway.p12
+    key-store-password: kp2020
+    key-alias: kpgateway
+    trust-store: KP/gateway-service/src/main/resources/kpGateway_truststore.p12
+    trust-store-password: kp2020
+    trust-store-type: PKCS12
+    enabled: true
+
+spring:
+  application:
+    name: gateway-service
+  cloud:
+    gateway:
+#      globalcors:
+#        corsConfigurations:
+#          '[/**]':
+#            allowedOrigins: "*"
+#            allowedMethods:
+#              - GET
+#              - POST
+#              - PUT
+#              - DELETE
+      routes:
+        - id: lu-accounting-service
+          uri: lb://lu-accounting-service
+          predicates:
+            - Method=GET
+        - id: kp-service
+          uri: lb://kp-service
+          predicates:
+            - Method=GET
+        - id: kp-payment-service
+          uri: lb://kp-payment-service
+          predicates:
+            - Method=GET
+        - id: bitcoin-payment-service
+          uri: lb://bitcoin-payment-service
+          predicates:
+            - Method=GET
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+management:
+  endpoint:
+    service-registry:
+      enabled: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: https://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+    healthcheck:
+      enabled: true
+    registry-fetch-interval-seconds: 3
+  instance:
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+    hostname: localhost
+    instance-id: ${spring.application.name}:${random.int}
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+

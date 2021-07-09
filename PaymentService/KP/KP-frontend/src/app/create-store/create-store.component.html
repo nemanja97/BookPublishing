@@ -1,0 +1,49 @@
+<app-header></app-header>
+<div class="form-wrapper">
+  <mat-card class="box" id="login-box">
+    <mat-card-header>
+      <mat-icon class="account-icon">account_circle</mat-icon>
+    </mat-card-header>
+
+    <form class="form" [formGroup]="storeForm" (ngSubmit)="storeForm.valid && onStoreSubmit()" noval>
+      <mat-card-content>
+        <mat-form-field class="field-full-width">
+          <input id="name"
+                 matInput
+                 formControlName="name"
+                 placeholder="Name"/>
+          <mat-error>name can not be blank.</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input id="parentStoreId"
+                 matInput
+                 formControlName="parentStoreId"
+                 placeholder="Parent store id"/>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input id="storeTransactionSuccessWebhook"
+                 matInput
+                 formControlName="storeTransactionSuccessWebhook"
+                 placeholder="Success url"/>
+          <mat-error>parentStoreId can not be blank.</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input id="storeTransactionFailureWebhook"
+                 matInput
+                 formControlName="storeTransactionFailureWebhook"
+                 placeholder="Failure url"/>
+          <mat-error>storeTransactionFailureWebhook can not be blank.</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input id="storeTransactionErrorWebhook"
+                 matInput
+                 formControlName="storeTransactionErrorWebhook"
+                 placeholder="Error url"/>
+          <mat-error>storeTransactionFailureWebhook can not be blank.</mat-error>
+        </mat-form-field>
+        <button id="loginBt" mat-stroked-button color="primary" class="btn-block">Create store</button>
+      </mat-card-content>
+    </form>
+  </mat-card>
+
+</div>

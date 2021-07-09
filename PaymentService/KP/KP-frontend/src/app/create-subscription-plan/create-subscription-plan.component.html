@@ -1,0 +1,115 @@
+<app-header></app-header>
+<div class="form-wrapper">
+  <mat-card class="box" id="login-box">
+
+    <form class="form" [formGroup]="planForm" (ngSubmit)="planForm.valid && onPlanSubmit()" noval>
+      <mat-card-content>
+        <mat-form-field class="field-full-width">
+          <input id="name"
+                 matInput
+                 formControlName="name"
+                 placeholder="Name"/>
+          <mat-error>name can not be blank.</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input id="description"
+                 matInput
+                 formControlName="description"
+                 placeholder="Description"/>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Frequency</mat-label>
+          <mat-select
+            id="frequency"
+            formControlName="frequency">
+            <mat-option value="DAY">
+              DAY
+            </mat-option>
+            <mat-option value="WEEK">
+              WEEK
+            </mat-option>
+            <mat-option value="MONTH">
+              MONTH
+            </mat-option>
+            <mat-option value="YEAR">
+              YEAR
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input id="freqInterval"
+                 matInput
+                 formControlName="freqInterval"
+                 placeholder="Frequency interval"/>
+          <mat-error>freqInterval can not be blank.</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input id="cycles"
+                 matInput
+                 formControlName="cycles"
+                 placeholder="Cycles"/>
+          <mat-error>cycles can not be blank.</mat-error>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input id="amount"
+                 matInput
+                 formControlName="amount"
+                 placeholder="Amount"/>
+          <mat-error>amount can not be blank.</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>currency</mat-label>
+          <mat-select
+            id="currency"
+            formControlName="currency">
+            <mat-option value=AUD>
+              AUD
+            </mat-option>
+            <mat-option value=BRL>
+              BRL
+            </mat-option>
+            <mat-option value=CAD>
+              CAD
+            </mat-option>
+            <mat-option value=CNY>
+              CNY
+            </mat-option>
+            <mat-option value=CZK>
+              CZK
+            </mat-option>
+            <mat-option value=DKK>
+              DKK
+            </mat-option>
+            <mat-option value=EUR>
+              EUR
+            </mat-option>
+            <mat-option value=HKD>
+              HKD
+            </mat-option>
+            <mat-option value=HUF>
+              HUF
+            </mat-option>
+            <mat-option value=RUB>
+              RUB
+            </mat-option>
+            <mat-option value=USD>
+              USD
+            </mat-option>
+            <mat-option value=CHF>
+              CHF
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="field-full-width">
+          <input id="amountStart"
+                 matInput
+                 formControlName="amountStart"
+                 placeholder="Starting amount"/>
+          <mat-error>amountStart can not be blank.</mat-error>
+        </mat-form-field>
+        <button id="loginBt" mat-stroked-button color="primary" class="btn-block">Create paypal subscription plan</button>
+      </mat-card-content>
+    </form>
+  </mat-card>
+
+</div>

@@ -1,0 +1,6 @@
+<h2 mat-dialog-title>Enter bitcoin API key</h2>
+<input matInput [(ngModel)]="data.api" type="text" placeholder="Bitcoin API key">
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="data.api">Add</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

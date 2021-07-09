@@ -1,0 +1,209 @@
+<h1>{{book.title}}</h1>
+by <b>{{book.author}}</b>
+<p>Synopsis:{{book.synopsis}}</p>
+<div *ngIf="canDownload()">
+  <button mat-raised-button (click)="download()">Download</button>
+</div>
+<div *ngIf="betaReaderReviews && isWriter()">
+  <h2>BetaReader reviews:</h2>
+  <div *ngFor="let r of betaReaderReviews">
+    <h3>{{r.betaReader}}</h3>
+    <div>{{r.reviewText}}</div>
+  </div>
+</div>
+<div *ngIf="lectorReviews && isWriter()">
+  <h2>Lector reviews:</h2>
+  <div *ngFor="let r of lectorReviews">
+    <div>{{r.lectorComment}}</div>
+    <h4>Needs changes: {{r.needsCorrections}}</h4>
+  </div>
+</div>
+<div *ngIf="editorReviews && isWriter()">
+  <h2>Editor comments:</h2>
+  <div *ngFor="let r of editorReviews">
+    <div>{{r.comment}}</div>
+  </div>
+</div>
+
+<div *ngIf="canUploadManuscript()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Upload manuscript</h2>
+        <app-camunda-dynamic-form
+          [formFields]="writerUploadsManuscriptFormFields"
+          [loadingData]="loadingWriterUploadsManuscriptData"
+          (submitEvent)="uploadManuscript($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canEditorInitialReview()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Initial review</h2>
+        <app-camunda-dynamic-form
+          [formFields]="initialReviewFormFields"
+          [loadingData]="loadingInitialReviewData"
+          (submitEvent)="askForManuscript($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canEditorPlagiarismReview()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Is book plagiarism</h2>
+        <app-camunda-dynamic-form
+          [formFields]="plagiarismFormFields"
+          [loadingData]="loadingPlagiarismData"
+          (submitEvent)="decidePlagiarism($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canEditorDecideOnPublishing()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Proceed with publishing</h2>
+        <app-camunda-dynamic-form
+          [formFields]="decideOnPublishingFormFields"
+          [loadingData]="loadingDecideOnPublishingData"
+          (submitEvent)="decideOnPublishing($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canEditorDecideOnNeedsBetaReaders()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Does book need betareaders</h2>
+        <app-camunda-dynamic-form
+          [formFields]="decideOnNeedsBetaReadersFormFields"
+          [loadingData]="loadingDecideOnNeedsBetaReadersData"
+          (submitEvent)="decideOnNeedsBetaReaders($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canEditorPickBetaReaders()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Select betareaders</h2>
+        <app-camunda-dynamic-form
+          [formFields]="pickBetaReadersFormFields"
+          [loadingData]="loadingPickBetaReadersData"
+          (submitEvent)="pickBetaReaders($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canBetaReaderReview()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Review book</h2>
+        <app-camunda-dynamic-form
+          [formFields]="betaReaderReviewFormFields"
+          [loadingData]="loadingBetaReaderReviewData"
+          (submitEvent)="betaReaderReview($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canUploadManuscriptAgain()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Please upload manuscript again</h2>
+        <app-camunda-dynamic-form
+          [formFields]="writerUploadAgainFormFields"
+          [loadingData]="loadingWriterUploadAgainData"
+          (submitEvent)="uploadManuscriptAgain($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canEditorDecideIfNeedsChange()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Does book need changes</h2>
+        <app-camunda-dynamic-form
+          [formFields]="decideNeedsChangesFormFields"
+          [loadingData]="loadingdecideNeedsChangesData"
+          (submitEvent)="decideNeedsChanges($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canLectorReview()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Please lector book</h2>
+        <app-camunda-dynamic-form
+          [formFields]="lectorChangesFormFields"
+          [loadingData]="loadingLectorChangesData"
+          (submitEvent)="lectorReview($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canEditorDecideSuitabilityToPublish()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Is book suitable for publishing</h2>
+        <app-camunda-dynamic-form
+          [formFields]="editorDecidesSuitabilityFormFields"
+          [loadingData]="loadingEditorDecidesSuitabilityData"
+          (submitEvent)="decideOnSuitability($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canEditorAskForFinalChanges()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>What changes should author make</h2>
+        <app-camunda-dynamic-form
+          [formFields]="editorNeedsFinalChangesFormFields"
+          [loadingData]="loadingEditorNeedsFinalChangesData"
+          (submitEvent)="askForFinalChanges($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>
+<div *ngIf="canWriterUploadsFinalManuscript()">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2>Please upload manuscript again</h2>
+        <app-camunda-dynamic-form
+          [formFields]="writerUploadsFinalManuscriptFormFields"
+          [loadingData]="loadingWriterUploadsFinalManuscriptData"
+          (submitEvent)="uploadFinalManuscript($event)"
+        ></app-camunda-dynamic-form>
+      </div>
+    </div>
+  </div>
+</div>

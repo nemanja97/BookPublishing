@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/literarno_udruzenje?useSSL=false&createDatabaseIfNotExist=true&serverTimezone=Europe/Belgrade
+    username: root
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update
+  mail:
+    protocol: smtp
+    host: smtp.mailtrap.io
+    port: 2525
+    username: e3228358af2214
+    password: 494507f700f801
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+camunda:
+  bpm:
+    admin-user:
+      id: admin
+      password: admin
+
+fileServerLocation: C:\UPP

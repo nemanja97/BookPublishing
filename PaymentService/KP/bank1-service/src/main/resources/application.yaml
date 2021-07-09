@@ -1,0 +1,27 @@
+server:
+  port: 8081
+  ssl:
+    key-store-type: PKCS12
+    key-store: KP/bank1-service/src/main/resources/bank1.p12
+    key-store-password: kp2020
+    key-alias: bank1
+    enabled: true
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/bank1_service?useSSL=false&createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: admin
+  jpa:
+    hibernate:
+      ddl-auto: update #modify StartupDataAdder as necessary
+  application:
+    name: bank1-service
+
+database:
+  encryption:
+    key: UMoilqPk4zyMuZxkAnw0vEJBkFnnB3fh
+
+api:
+  frontend: https://localhost:4202
+  pcc: https://localhost:8083/api
